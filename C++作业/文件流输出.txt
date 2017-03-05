@@ -1,0 +1,36 @@
+
+
+#include<iostream>
+#include<fstream>
+
+using namespace std;
+
+void main() {
+ofstream myfile;
+myfile.open("filename1.txt");
+myfile<<"一. \n  课程编号 1 \n  任课教师 sb \n 课程名  数学 * \n  \n  二. \n  课程编号 2 \n  任课教师 SB \n 课程名  语文";
+myfile.close();
+
+ifstream filei("filename1.txt");
+ofstream fileo;
+fileo.open("filename2.txt");
+
+char c;
+filei>>noskipws; 
+
+while(filei>>c)
+ {
+
+
+fileo<<c;
+
+if(c=='*')
+break;
+}
+
+filei.close();
+fileo.close();
+}
+
+
+
